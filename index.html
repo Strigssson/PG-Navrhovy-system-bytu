@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+  <script type="module" src="../js/main.js"></script>
+
+  <div class="sidenav">
+    <button class="dropdown-btn">Draw and Build
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <button class="option-btn" id="drawBuild"> Turn draw and build mode on/off</button>
+      <button class="option-btn" id="build"> Build walls </button>
+    </div>
+    <button class="dropdown-btn">Design
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <button class="option-btn" id="move"> Turn mover mode on/off</button>
+      <button class="dropdown-btn">Add items
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <button class="dropdown-btn">Living room
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <button class="option-btn" id="tv"> TV </button>
+          <button class="option-btn" id="couch"> Couch </button>
+          <button class="option-btn" id="smallTable"> Small table </button>
+        </div>
+        <button class="dropdown-btn">Bedroom
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <button class="option-btn" id="bedButton"> Bed </button>
+          <button class="option-btn" id="wardrobe"> Wardrobe </button>
+        </div>
+        <button class="dropdown-btn">Bathroom
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <button class="option-btn" id="toilet"> Toilet </button>
+          <button class="option-btn" id="shower"> Shower </button>
+        </div>
+        <button class="dropdown-btn">Kitchen
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <button class="option-btn" id="fridge"> Fridge </button>
+          <button class="option-btn" id="kitchenunit"> Kitchen unit </button>
+          <button class="option-btn" id="stove"> Stove </button>
+        </div>
+        <button class="dropdown-btn">Window/Door
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <button class="option-btn" id="window"> Window </button>
+          <button class="option-btn" id="door"> Door </button>
+        </div>
+      </div>
+      <button class="dropdown-btn">Edit selected
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <label for="name">Object</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="width">Width</label>
+        <input type="number" name="width" id="width">
+        <br>
+        <label for="length">Length</label>
+        <input type="number" name="length" id="length">
+        <br>
+        <label for="height">Height</label>
+        <input type="number" name="height" id="height">
+        <br>
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color">
+        <br>
+        <input type="submit" id="submit" value="Submit changes">
+        <br>
+        <br>
+        <button id="delete"> Delete object </button>
+      </div>
+
+    </div>
+
+    <button class="dropdown-btn">View
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <button class="option-btn" id="view"> Turn viewer mode on</button>
+      <button class="option-btn" id="opacity"> Wall opacity enable/disable</button>
+    </div>
+    <button class="option-btn" id="help">Help</button>
+
+  </div>
+
+<script>
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+</script>
+
+  </body>
+
+</html>
